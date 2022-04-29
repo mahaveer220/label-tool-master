@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  server:
+    build: .
+    image: toothsi/image-labeling-tool:latest
+    user: ${CURRENT_UID}
+    volumes:
+      - "/tmp/image-labeling-tool/uploads:/uploads"
+      - "/tmp/image-labeling-tool/db:/db"
+    ports:
+      - "5000:3000"
